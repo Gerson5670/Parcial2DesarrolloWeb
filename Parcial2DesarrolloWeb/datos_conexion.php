@@ -1,8 +1,8 @@
 <?php
 $db_host= "localhost";
-$db_usr = "usr_empresa";
+$db_usr = "";
 $db_pass = "";
-$db_nombre = "db_empresa";
+$db_nombre = "bdconfio";
 
 chi
 ?>
