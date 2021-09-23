@@ -18,22 +18,22 @@ if (isset($_SESSION['u_usuario'])){
 }
 
 
-$idproductos=$_POST ['NitClie'];
-$idMarca=$_POST['NombresClie'];
-$Descripcion = $_POST ['ApellidosClie'];
-$precio_costo=$_POST ['CelularClie'];
-$precio_venta =$_POST ['DireccionClie'];
-$existencia=$_POST ['EmailClie'];
+$producto=$_POST ['producto'];
+$idMarca=$_POST['idMarca'];
+$descripcion = $_POST ['Descripciom'];
+$precio_costo=$_POST ['precio_costo'];
+$precio_venta=$_POST ['precio_venta'];
+$existencia=$_POST ['existencia'];
 
-$sentencia1=$pdo->prepare ("INSERT INTO clientes (Nitcliente, NombreCliente, ApellidoCliente, CelularCliente, DireccionCliente, EmailCliente)
-VALUES(:Nitcliente, :NombreCliente, :ApellidoCliente, :CelularCliente, :DireccionCliente, :EmailCliente)");
+$sentencia1=$pdo->prepare ("INSERT INTO producto (producto, idMarca, Descripcion, precio_costo, precio_venta, existencia)
+VALUES(:producto, :idMarca, :Descripcion, :precio_costo, :precio_venta, :existencia)");
 
-$sentencia1->bindParam(':Nitcliente',$NitClie);
-$sentencia1->bindParam(':NombreCliente',$NombresClie);
-$sentencia1->bindParam(':ApellidoCliente',$ApellidosClie);
-$sentencia1->bindParam(':CelularCliente',$CelularClie);
-$sentencia1->bindParam(':DireccionCliente',$DireccionClie);
-$sentencia1->bindParam(':EmailCliente',$EmailClie);
+$sentencia1->bindParam(':producto',$producto);
+$sentencia1->bindParam(':idMarca',$idMarca);
+$sentencia1->bindParam(':Descripcion',$descripcion);
+$sentencia1->bindParam(':precio_costo',$precio_costo);
+$sentencia1->bindParam(':precio_venta',$precio_venta);
+$sentencia1->bindParam(':existencia',$existencia);
 
 
 if ($sentencia1->execute()){
@@ -43,3 +43,4 @@ if ($sentencia1->execute()){
  echo "No se ha insertado ningun dato";
 
 }
+
