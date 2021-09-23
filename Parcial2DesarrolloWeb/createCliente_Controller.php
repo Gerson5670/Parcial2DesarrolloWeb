@@ -18,12 +18,12 @@ if (isset($_SESSION['u_usuario'])){
 }
 
 
-$NitClie=$_POST ['NitClie'];
-$NombresClie=$_POST['NombresClie'];
-$ApellidosClie = $_POST ['ApellidosClie'];
-$CelularClie=$_POST ['CelularClie'];
-$DireccionClie =$_POST ['DireccionClie'];
-$EmailClie=$_POST ['EmailClie'];
+$idproductos=$_POST ['NitClie'];
+$idMarca=$_POST['NombresClie'];
+$Descripcion = $_POST ['ApellidosClie'];
+$precio_costo=$_POST ['CelularClie'];
+$precio_venta =$_POST ['DireccionClie'];
+$existencia=$_POST ['EmailClie'];
 
 $sentencia1=$pdo->prepare ("INSERT INTO clientes (Nitcliente, NombreCliente, ApellidoCliente, CelularCliente, DireccionCliente, EmailCliente)
 VALUES(:Nitcliente, :NombreCliente, :ApellidoCliente, :CelularCliente, :DireccionCliente, :EmailCliente)");
