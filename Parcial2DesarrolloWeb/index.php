@@ -61,23 +61,23 @@ $query_producto = $pdo->prepare("SELECT * FROM productos");
 $query_producto->execute();
 $productoX = $query_productos->fetchAll(PDO::FETCH_ASSOC);
 
-foreach ($clientesX as $clientesY) {
-    $IdCliente =$clientesY ['Idcliente'];
-    $NitClie =$clientesY['Nitcliente'];
-    $NombresClie =$clientesY['NombreCliente'];
-    $ApellidosClie = $clientesY['ApellidoCliente'];
-    $CelularClie=$clientesY['CelularCliente'];
-    $DireccionClie=$clientesY['DireccionCliente'];
-    $EmailClie=$clientesY['EmailCliente'];
+foreach ($productoX as $productoY) {
+    $Idproductos =$productoY ['Idproductos'];
+    $producto =$productoY['producto'];
+    $idMarca =$productoY['idMarca'];
+    $descripcion = $productoY['descripcion'];
+    $precio_costo=$productoY['precio_costo'];
+    $precio_venta=$prodcutoY['precio_venta'];
+    $existencia=$productoY['existencia'];
     ?>
          <tr>
-           <td> <?php  echo $IdCliente; ?> </td>
-           <td> <?php  echo $NitClie; ?> </td> 
-           <td> <?php  echo $NombresClie; ?> </td>
-           <td> <?php  echo $ApellidosClie; ?> </td>
-           <td> <?php  echo $CelularClie; ?> </td>
-           <td> <?php  echo $DireccionClie; ?> </td>
-           <td> <?php  echo $EmailClie; ?> </td>
+           <td> <?php  echo $Idproductos; ?> </td>
+           <td> <?php  echo $producto ; ?> </td> 
+           <td> <?php  echo $idMarca; ?> </td>
+           <td> <?php  echo $descripcion ; ?> </td>
+           <td> <?php  echo $precio_costo; ?> </td>
+           <td> <?php  echo $precio_venta; ?> </td>
+           <td> <?php  echo $existencia; ?> </td>
         
 
      </tr>
